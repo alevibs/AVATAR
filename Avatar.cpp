@@ -19,7 +19,6 @@ Avatar::Avatar(const Tablero &auxmapa):mapa(auxmapa) { //se usa el mismo auxmapa
 	do {
 		posX = rand() % 10;
 		posY = rand() % 10;
-		cout<<"posicion generada: "<< posX << ","<< posY << endl;
 	} while (mapa.getCelda(posX, posY) ==0 || (posX == 1 && posY == 9) || (posX == 1 && posY == 8) || (posX == 1 && posY == 7)); //se genera una posicion aleatoria hasta que se encuentre una casilla con valor 1 y que no sea la posicion inicial del avatar
 	for (int i=0; i<10; i++)       //se inicia con ninguna ruta visitada
 	{

@@ -54,13 +54,15 @@ int main() {
 	Avatar jugador(mapa);
 //Interacción de objetos
   	jugador.guardarRuta();
-  	cout<<"Hubicación actual del Avatar en el tablero: ";
+  	cout<<"ubicación actual del Avatar en el tablero: ";
   	jugador.imprimirSolucion();
-	jugador.mapearNuevosCaminos();
-	jugador.mostrarCaminosPosibles();
-	jugador.moverAvatar();
-  	jugador.guardarRuta();
-  	cout<<"Ruta recorrida por el Avatar en el tablero:"<<endl;
+	while (jugador.getPosX() != 9 || jugador.getPosY() != 9) {
+		jugador.mapearNuevosCaminos();
+		jugador.mostrarCaminosPosibles();
+		jugador.moverAvatar();
+  		jugador.guardarRuta();
+	}
+	cout<<"Ruta recorrida por el Avatar en el tablero:"<<endl;
   	jugador.imprimirSolucion();
 return 0;
 }
