@@ -33,10 +33,12 @@ void Avatar::mapearNuevosCaminos() {
 
 // Mover el Avatar
 void Avatar::moverAvatar() {
+	if(!posiblesCaminosX.empty()){
 	posX = posiblesCaminosX.top();
 	posiblesCaminosX.pop();
 	posY = posiblesCaminosY.top();
 	posiblesCaminosY.pop();
+	}
 }
 
 void Avatar::guardarPosibleCamino(int x, int y) {
