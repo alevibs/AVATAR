@@ -12,9 +12,7 @@ using namespace std;
 
 // Constructor
 Avatar::Avatar(const Tablero &auxmapa):mapa(auxmapa) { //se usa el mismo auxmapa por referencia
-	//Se inicializa el avatar en la posicion 1 en la fila y 1 en la columna
-	posX = 0;
-	posY = 1;
+	
 	ruta.resize(0);//Se inicializa el vector de rutas
 	do {
 		posX = rand() % 10;
