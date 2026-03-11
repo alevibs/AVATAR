@@ -42,7 +42,7 @@
 #include "Tablero.h"
 #include <iostream>
 using namespace std;
-//hola
+//hola-deded
 int main() {
 //Instaciar los objetos
 	Tablero mapa;
