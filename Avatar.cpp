@@ -83,3 +83,6 @@ void Avatar::imprimirSolucion() {
 		cout << "[x:" << ruta[i][0] << " y:" << ruta[i][1] <<"]"<< endl;
 	}
 }
+
+// COMENTARIO
+
