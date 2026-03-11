@@ -15,7 +15,7 @@ Avatar::Avatar(const Tablero &auxmapa):mapa(auxmapa) { //se usa el mismo auxmapa
 	//Se inicializa el avatar en la posicionS1 en la fila y 1 en la columna
 	posX = 0;
 	posY = 1;
-	bool visitados[posX][posY];
+	
 	ruta.resize(0);//Se inicializa el vector de rutas
 	do {
 		posX = rand() % 10;
