@@ -38,13 +38,16 @@
  * junto con este programa. Si no, consulte <https://www.gnu.org/licenses/>.
  */
 // Se incluye la clase
+//s
 #include "Avatar.h"
 #include "Tablero.h"
 #include <iostream>
+#include <stdlib.h>
+#include <time.h>
 using namespace std;
-//hola-deded
 int main() {
 //Instaciar los objetos
+ srand(time(NULL));
 	Tablero mapa;
 	mapa.cargarTablero("tablero.txt");//se carga el tablero desde un archivo plano
 	mapa.mostrarTablero();
