@@ -40,17 +40,19 @@ void Avatar::mapearNuevosCaminos() {
 
 // Mover el Avatar
 void Avatar::moverAvatar() {
+	if(!posiblesCaminosX.empty()){
 	posX = posiblesCaminosX.top();
 	posiblesCaminosX.pop();
 	posY = posiblesCaminosY.top();
 	posiblesCaminosY.pop();
 	visitados[posX][posY] = true;
 }
+}
 
 void Avatar::guardarPosibleCamino(int x, int y) {
 
 	if ((x >= 0 && x <= 9) && (y >= 0 && y <= 9)) {
-		if (mapa.getCelda(x, y) == 1 && !visitados[x][y]) {
+		if (mapa.getCelda(x, y) == 1 ) {
 			posiblesCaminosX.push(x);
 			posiblesCaminosY.push(y);
 		}
