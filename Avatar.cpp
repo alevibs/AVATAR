@@ -12,16 +12,21 @@ using namespace std;
 
 // Constructor
 Avatar::Avatar(const Tablero &auxmapa):mapa(auxmapa) { //se usa el mismo auxmapa por referencia
-	//Se inicializa el avatar en la posicion 1 en la fila y 1 en la columna
+	//Se inicializa el avatar en la posicionS1 en la fila y 1 en la columna
 	posX = 0;
 	posY = 1;
+	bool visitados[posX][posY];
 	ruta.resize(0);//Se inicializa el vector de rutas
 	do {
 		posX = rand() % 10;
 		posY = rand() % 10;
 	} while (mapa.getCelda(posX, posY) ==0 || (posX == 1 && posY == 9) || (posX == 1 && posY == 8) || (posX == 1 && posY == 7)); //se genera una posicion aleatoria hasta que se encuentre una casilla con valor 1 y que no sea la posicion inicial del avatar
-	
-
+		// inicializar visitados
+	for (int i = 0; i < 10; i++) {
+		for (int j = 0; j < 10; j++) {
+			visitados[i][j] = false;
+		}
+	}
 	posiblesCaminosX.empty();//se inicializa los vectores de posibles caminos en X
 	posiblesCaminosY.empty();//se inicializa los vectores de posibles caminos en Y
 }
@@ -39,6 +44,7 @@ void Avatar::moverAvatar() {
 	posiblesCaminosX.pop();
 	posY = posiblesCaminosY.top();
 	posiblesCaminosY.pop();
+	visitados[posX][posY] = true;
 }
 
 void Avatar::guardarPosibleCamino(int x, int y) {

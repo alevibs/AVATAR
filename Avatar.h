@@ -64,6 +64,7 @@ class Avatar {
 private:
 	int posX; //Posicion en las filas
 	int posY; //posicion en las columnas
+	bool visitados[10][10];
 	vector<vector<int>> ruta; //almacena la posX y posY de la ruta que ha tomado el avatar
 	const Tablero &mapa; //el mapa se obtiene por referencia
 	stack<int> posiblesCaminosX; //Consultar sobre el manejo de las pilas acá se apilan posibles caminos en las filas
