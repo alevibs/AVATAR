@@ -68,7 +68,11 @@ private:
 	const Tablero &mapa; //el mapa se obtiene por referencia
 	stack<int> posiblesCaminosX; //Consultar sobre el manejo de las pilas acá se apilan posibles caminos en las filas
 	stack<int> posiblesCaminosY;//Consultar sobre el manejo de las pilas acá se apilan posibles caminos en las columnas
-
+	
+	bool visitados[10][10];
+	stack<int>volverX;
+	stack<int>volverY;
+	
 	// métodos
 public:
 	// Método constructor
@@ -81,6 +85,8 @@ public:
 	void mostrarCaminosPosibles();//Muestra los posibles camios
 	void mapearNuevosCaminos();//Busca nuevos caminos implementar en el punto extra
 	void imprimirSolucion();
+	
+	void buscarSalisa();
 };
 // Cierro el candado
 #endif

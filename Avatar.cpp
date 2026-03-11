@@ -16,6 +16,19 @@ Avatar::Avatar(const Tablero &auxmapa):mapa(auxmapa) { //se usa el mismo auxmapa
 	posX = 1;
 	posY = 2;
 	ruta.resize(0);//Se inicializa el vector de rutas
+
+	for (int i=0; i<10; i++)       //se inicia con ninguna ruta visitada
+	{
+		for (int j=0; j<10; j++)
+		{
+
+		visitados[i][j]=false;
+		}
+
+	}
+
+	visitados [posX][posY]=true;// se marca como visitada la casilla en la cual aparece
+
 	posiblesCaminosX.empty();//se inicializa los vectores de posibles caminos en X
 	posiblesCaminosY.empty();//se inicializa los vectores de posibles caminos en Y
 }
@@ -38,7 +51,7 @@ void Avatar::moverAvatar() {
 void Avatar::guardarPosibleCamino(int x, int y) {
 
 	if ((x >= 0 && x <= 9) && (y >= 0 && y <= 9)) {
-		if (mapa.getCelda(x, y) == 1) {
+		if (mapa.getCelda(x, y) == 1 && !visitados[x][y]) {
 			posiblesCaminosX.push(x);
 			posiblesCaminosY.push(y);
 		}
@@ -84,5 +97,5 @@ void Avatar::imprimirSolucion() {
 	}
 }
 
-// COMENTARIO
+
 
