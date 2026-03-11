@@ -13,10 +13,14 @@ using namespace std;
 // Constructor
 Avatar::Avatar(const Tablero &auxmapa):mapa(auxmapa) { //se usa el mismo auxmapa por referencia
 	//Se inicializa el avatar en la posicion 1 en la fila y 1 en la columna
-	posX = 1;
-	posY = 2;
+	posX = 0;
+	posY = 1;
 	ruta.resize(0);//Se inicializa el vector de rutas
-
+	do {
+		posX = rand() % 10;
+		posY = rand() % 10;
+		cout<<"posicion generada: "<< posX << ","<< posY << endl;
+	} while (mapa.getCelda(posX, posY) ==0);
 	for (int i=0; i<10; i++)       //se inicia con ninguna ruta visitada
 	{
 		for (int j=0; j<10; j++)
