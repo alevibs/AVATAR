@@ -42,7 +42,7 @@ void Avatar::moverAvatar() {
 	posiblesCaminosX.pop();
 	posY = posiblesCaminosY.top();
 	posiblesCaminosY.pop();
-	visitados[posX][posY] = true;
+
 }
 }
 
